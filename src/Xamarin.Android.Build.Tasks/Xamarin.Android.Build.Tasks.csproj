@@ -130,7 +130,7 @@
     <Compile Include="Tasks\GetFilesThatExist.cs" />
     <Compile Include="Tasks\ReadJavaStubsCache.cs" />
     <Compile Include="Tasks\RemoveRegisterAttribute.cs" />
-    <Compile Include="Tasks\GetMonoPlatformJar.cs" />
+    <Compile Include="Tasks\GetMonoPlatformJars.cs" />
     <Compile Include="Tasks\GeneratePackageManagerJava.cs" />
     <Compile Include="Tasks\GenerateJavaStubs.cs" />
     <Compile Include="Tasks\Javac.cs" />
@@ -647,12 +647,6 @@
     <EmbeddedResource Include="Resources\machine.config">
       <LogicalName>machine.config</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MonoPackageManager.java">
-      <LogicalName>MonoPackageManager.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Seppuku.java">
-      <LogicalName>Seppuku.java</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Linker\PreserveLists\mscorlib.xml">
       <LogicalName>mscorlib.xml</LogicalName>
     </EmbeddedResource>
@@ -671,32 +665,8 @@
     <EmbeddedResource Include="Resources\proguard_xamarin.cfg">
       <LogicalName>proguard_xamarin.cfg</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MonoPackageManager.api4.java">
-      <LogicalName>MonoPackageManager.api4.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\NotifyTimeZoneChanges.java">
-      <LogicalName>NotifyTimeZoneChanges.java</LogicalName>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ApplicationRegistration.java">
       <LogicalName>ApplicationRegistration.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\IncrementalClassLoader.java">
-      <LogicalName>IncrementalClassLoader.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Placeholder.java">
-      <LogicalName>Placeholder.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MultiDexLoader.java">
-      <LogicalName>MultiDexLoader.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MultiDexLoader.Debug.java">
-      <LogicalName>MultiDexLoader.Debug.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MonkeyPatcher.java">
-      <LogicalName>MonkeyPatcher.java</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ResourcePatcher.java">
-      <LogicalName>ResourcePatcher.java</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\XamarinAndroidEnvironmentVariables.java">
       <LogicalName>XamarinAndroidEnvironmentVariables.java</LogicalName>

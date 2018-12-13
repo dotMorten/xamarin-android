@@ -77,14 +77,7 @@ namespace Xamarin.Android.Tasks
 
 			using (var stream = new MemoryStream ())
 			using (var pkgmgr = new StreamWriter (stream)) {
-				// Write the boilerplate from the MonoPackageManager.java resource
-				var packageManagerResource = minApiVersion < 9 ? "MonoPackageManager.api4.java" : "MonoPackageManager.java";
-				using (var template = new StreamReader (Assembly.GetExecutingAssembly ().GetManifestResourceStream (packageManagerResource))) {
-					string line;
-					while ((line = template.ReadLine ()) != null) {
-						pkgmgr.WriteLine (line);
-					}
-				}
+				pkgmgr.WriteLine ("package mono;");
 
 				// Write all the user assemblies
 				pkgmgr.WriteLine ("class MonoPackageManager_Resources {");
@@ -115,7 +108,7 @@ namespace Xamarin.Android.Tasks
 				pkgmgr.Flush ();
 
 				// Only copy to the real location if the contents actually changed
-				var dest = Path.GetFullPath (Path.Combine (OutputDirectory, "MonoPackageManager.java"));
+				var dest = Path.GetFullPath (Path.Combine (OutputDirectory, "MonoPackageManager_Resources.java"));
 
 				MonoAndroidHelper.CopyIfStreamChanged (stream, dest);
 			}
