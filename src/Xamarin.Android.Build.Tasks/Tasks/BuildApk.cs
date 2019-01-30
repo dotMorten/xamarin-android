@@ -48,7 +48,7 @@ namespace Xamarin.Android.Tasks
 		public ITaskItem[] TypeMappings { get; set; }
 
 		[Required]
-		public string [] DalvikClasses { get; set; }
+		public ITaskItem [] DalvikClasses { get; set; }
 
 		[Required]
 		public string SupportedAbis { get; set; }
@@ -105,7 +105,9 @@ namespace Xamarin.Android.Tasks
 						Assembly.GetExecutingAssembly ().GetManifestResourceStream ("NOTICE.txt"));
 
 				// Add classes.dx
-				apk.Archive.AddFiles (DalvikClasses, useFileDirectories: false);
+				foreach (var dex in DalvikClasses) {
+					apk.Archive.AddFile (dex.ItemSpec, dex.GetMetadata ("ApkName") ?? Path.GetFileName (dex.ItemSpec));
+				}
 
 				if (EmbedAssemblies && !BundleAssemblies)
 					AddAssemblies (apk);
