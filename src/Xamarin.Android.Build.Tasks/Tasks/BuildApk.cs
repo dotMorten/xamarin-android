@@ -106,7 +106,8 @@ namespace Xamarin.Android.Tasks
 
 				// Add classes.dx
 				foreach (var dex in DalvikClasses) {
-					apk.Archive.AddFile (dex.ItemSpec, dex.GetMetadata ("ApkName") ?? Path.GetFileName (dex.ItemSpec));
+					string apkName = dex.GetMetadata ("ApkName");
+					apk.Archive.AddFile (dex.ItemSpec, string.IsNullOrWhiteSpace (apkName) ? Path.GetFileName (dex.ItemSpec) : apkName);
 				}
 
 				if (EmbedAssemblies && !BundleAssemblies)
