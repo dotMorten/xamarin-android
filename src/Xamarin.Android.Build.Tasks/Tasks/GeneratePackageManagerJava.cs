@@ -80,7 +80,7 @@ namespace Xamarin.Android.Tasks
 				pkgmgr.WriteLine ("package mono;");
 
 				// Write all the user assemblies
-				pkgmgr.WriteLine ("class MonoPackageManager_Resources {");
+				pkgmgr.WriteLine ("public class MonoPackageManager_Resources {");
 				pkgmgr.WriteLine ("\tpublic static final String[] Assemblies = new String[]{");
 
 				pkgmgr.WriteLine ("\t\t/* We need to ensure that \"{0}\" comes first in this list. */", mainFileName);
